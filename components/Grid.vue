@@ -2,12 +2,13 @@
   <div
     class="z-0 w-full grid grid-cols-6 gap-0 border-gray-600 border-l-2 overflow-x-hidden pb-8-safe"
   >
-    <cell v-for="n in 365" :key="n" :number="n" />
+    <cell v-for="cell in gridState.cells" :key="cell.number" :cell="cell" />
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
+import { mapState } from 'vuex'
 import Cell from '~/components/Cell.vue'
 
 export default Vue.extend({
@@ -15,8 +16,8 @@ export default Vue.extend({
     Cell
   },
 
-  data() {
-    return { daysInYear: [...Array(365).keys()] }
+  computed: {
+    ...mapState(['gridState'])
   }
 })
 </script>
