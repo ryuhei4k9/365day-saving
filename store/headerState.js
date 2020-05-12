@@ -9,5 +9,9 @@ export const mutations = {
 
   subtractTotal(state, { amount }) {
     state.total -= amount
+  },
+
+  resetTotal(state) {
+    state.total = 0
   }
 }

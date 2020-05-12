@@ -23,5 +23,9 @@ export const mutations = {
     if (index >= 0) {
       state.cells[index].isDone = !state.cells[index].isDone
     }
+  },
+
+  resetCells(state) {
+    state.cells.forEach((cell) => (cell.isDone = false))
   }
 }
