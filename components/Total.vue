@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <span class="text-gray-100">貯金総額：{{ headerState.total }}円</span>
-  </div>
+  <span class="text-gray-100">貯金総額：{{ headerState.total }}円</span>
 </template>
 
 <script>

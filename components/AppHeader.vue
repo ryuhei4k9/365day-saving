@@ -2,13 +2,17 @@
   <div
     class="sticky top-0 z-40 bg-teal-500 w-full h-16 p-1 border-solid border-b-2 border-gray-600"
   >
-    <div class="absolute top-0 left-0">
-      <MenuIcon @click="toggleMenu()" />
+    <div class="flex items-center justify-center">
+      <div class="absolute right-0 text-gray-100 pr-2">
+        <MenuIcon @click="toggleMenu()" />
+      </div>
+      <div class="flex flex-col">
+        <span class="font-semibold text-xl tracking-wide text-gray-100 text-xl"
+          >365日貯金</span
+        >
+        <total />
+      </div>
     </div>
-    <span class="font-semibold text-xl tracking-wide text-gray-100 text-xl"
-      >365日貯金</span
-    >
-    <total />
     <!-- menu -->
 
     <div
@@ -75,5 +79,11 @@ export default Vue.extend({
 }
 .navbar-close {
   transform: translateX(-100%);
+}
+
+svg {
+  fill: currentColor;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 </style>
