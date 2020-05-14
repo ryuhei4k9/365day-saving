@@ -16,6 +16,7 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "nuxt": "^2.0.0",
     "tailwindcss-aspect-ratio": "^3.0.0",
+    "tailwindcss-filters": "^3.0.0",
     "tailwindcss-padding-safe": "^1.0.5",
     "vuex-persistedstate": "^3.0.1"
   },
