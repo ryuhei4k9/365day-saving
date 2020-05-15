@@ -22,6 +22,7 @@ module.exports = {
     }
   },
   variants: {
+    borderWidth: ['responsive', 'first', 'hover', 'focus'],
     aspectRatio: ['responsive']
   },
   plugins: [
