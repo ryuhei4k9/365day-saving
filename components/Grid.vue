@@ -7,11 +7,10 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import { mapState } from 'vuex'
 import Cell from '~/components/Cell.vue'
 
-export default Vue.extend({
+export default {
   components: {
     Cell
   },
@@ -19,7 +18,7 @@ export default Vue.extend({
   computed: {
     ...mapState(['gridState'])
   }
-})
+}
 </script>
 
 <style></style>
