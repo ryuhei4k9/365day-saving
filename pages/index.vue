@@ -1,18 +1,49 @@
 <template>
   <div class="container">
-    <appHeader />
-    <grid />
+    <div class="w-full">
+      <AppHeader @tapMenuIcon="openMenu" />
+      <Grid />
+    </div>
+    <transition name="slide-fade">
+      <Menu v-if="isOpenedMenu" @tapCloseIcon="closeMenu" />
+    </transition>
   </div>
 </template>
 
 <script>
 import AppHeader from '~/components/AppHeader.vue'
 import Grid from '~/components/Grid.vue'
+import Menu from '~/components/Menu.vue'
 
 export default {
   components: {
     AppHeader,
-    Grid
+    Grid,
+    Menu
+  },
+
+  data() {
+    return {
+      isOpenedMenu: false
+    }
+  },
+
+  mounted() {
+    setTimeout(() => {
+      this.$store.commit('settingState/initialize', {
+        date: this.$dayjs().format('YYYY/MM/DD')
+      })
+    }, 0)
+  },
+
+  methods: {
+    openMenu() {
+      this.isOpenedMenu = true
+    },
+
+    closeMenu() {
+      this.isOpenedMenu = false
+    }
   }
 }
 </script>
@@ -31,5 +62,17 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.5s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.5s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(40px);
+  opacity: 0;
 }
 </style>
