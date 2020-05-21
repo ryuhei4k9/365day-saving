@@ -42,7 +42,7 @@
         </li>
         <li class="list-item2">
           <div class="leading-6">埋めたマス</div>
-          <div class="leading-6">73 / 365</div>
+          <div class="leading-6">{{ numberOfDoneCell }} / 365</div>
         </li>
         <li class="list-item2">
           <div class="leading-6">貯金開始日</div>
@@ -77,7 +77,11 @@ export default {
     },
 
     date() {
-      return this.$store.state.headerState.total
+      return this.$store.state.settingState.launchDate
+    },
+
+    numberOfDoneCell() {
+      return this.$store.getters['gridState/numberOfDoneCell']
     }
   },
 
@@ -85,6 +89,9 @@ export default {
     resetStates() {
       this.$store.commit('gridState/resetCells')
       this.$store.commit('headerState/resetTotal')
+      this.$store.commit('settingState/resetSettings', {
+        date: this.$dayjs().format('YYYY/MM/DD')
+      })
     }
   }
 }

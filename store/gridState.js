@@ -17,6 +17,10 @@ export const state = () => ({
     })
 })
 
+export const getters = {
+  numberOfDoneCell: (state) => state.cells.filter((cell) => cell.isDone).length
+}
+
 export const mutations = {
   toggleDone(state, { cellNumber }) {
     const index = state.cells.findIndex((cell) => cell.number === cellNumber)

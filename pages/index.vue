@@ -22,17 +22,18 @@ export default {
     Menu
   },
 
-  fetch({ store, $dayjs }) {
-    store.commit(
-      'settingState/initializeLaunchDate',
-      $dayjs().format('YYYY/MM/DD')
-    )
-  },
-
   data() {
     return {
       isOpenedMenu: false
     }
+  },
+
+  mounted() {
+    setTimeout(() => {
+      this.$store.commit('settingState/initialize', {
+        date: this.$dayjs().format('YYYY/MM/DD')
+      })
+    }, 0)
   },
 
   methods: {
