@@ -8,11 +8,19 @@
       <Menu
         v-if="isOpenedMenu"
         @tapCloseIcon="closeMenu"
-        @tapDeleteMenu="openModal"
+        @tapDeleteSetting="openDeleteSettingModal"
+        @tapUpdateTitle="openUpdateTitleModal"
       />
     </transition>
 
-    <DeleteModal v-if="isModalShown" @tapCloseModal="closeModal" />
+    <DeleteModal
+      v-if="isShownDeleteSetting"
+      @tapCloseDeleteSetting="closeDeleteSettingModal"
+    />
+    <UpdateTitle
+      v-if="isShownUpdateTitle"
+      @tapCloseUpdateTitle="closeUpdateTitleModal"
+    />
   </div>
 </template>
 
@@ -21,19 +29,22 @@ import AppHeader from '~/components/AppHeader.vue'
 import Grid from '~/components/Grid.vue'
 import Menu from '~/components/Menu.vue'
 import DeleteModal from '~/components/DeleteModal.vue'
+import UpdateTitle from '~/components/UpdateTitle.vue'
 
 export default {
   components: {
     AppHeader,
     Grid,
     Menu,
-    DeleteModal
+    DeleteModal,
+    UpdateTitle
   },
 
   data() {
     return {
       isOpenedMenu: false,
-      isModalShown: false
+      isShownDeleteSetting: false,
+      isShownUpdateTitle: false
     }
   },
 
@@ -54,12 +65,20 @@ export default {
       this.isOpenedMenu = false
     },
 
-    openModal() {
-      this.isModalShown = true
+    openDeleteSettingModal() {
+      this.isShownDeleteSetting = true
     },
 
-    closeModal() {
-      this.isModalShown = false
+    closeDeleteSettingModal() {
+      this.isShownDeleteSetting = false
+    },
+
+    openUpdateTitleModal() {
+      this.isShownUpdateTitle = true
+    },
+
+    closeUpdateTitleModal() {
+      this.isShownUpdateTitle = false
     }
   }
 }

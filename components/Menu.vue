@@ -14,29 +14,15 @@
         </div>
       </div>
       <ul class="mb-4">
-        <li v-if="!isEditing" class="list-item border-t" @click="editTitle">
+        <li class="list-item border-t" @click="$emit('tapUpdateTitle')">
           <FlagIcon />
           <span class="leading-6">目標（タイトル）設定</span>
-        </li>
-        <li v-if="isEditing" class="list-item border-t">
-          <input
-            class="appearance-none bg-transparent border-b border-b-2 border-teal-500 w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-            type="text"
-            v-model="title"
-          />
-          <button
-            class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
-            type="button"
-            @click="updateTitle"
-          >
-            変更
-          </button>
         </li>
         <li class="list-item" @click="resetStates">
           <CalanderIcon />
           <span class="leading-6">貯金開始日変更</span>
         </li>
-        <li class="list-item" @click="$emit('tapDeleteMenu')">
+        <li class="list-item" @click="$emit('tapDeleteSetting')">
           <TrashIcon />
           <span class="leading-6">データ削除</span>
         </li>

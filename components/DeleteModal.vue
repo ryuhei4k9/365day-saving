@@ -7,7 +7,7 @@
     >
       <div class="relative flex justify-center items-cemter py-2">
         <div class="absolute right-0">
-          <XIcon @click="$emit('tapCloseModal')" />
+          <XIcon @click="$emit('tapCloseDeleteSetting')" />
         </div>
         <div class="font-semibold leading-8">
           データ削除
@@ -20,7 +20,7 @@
         <button
           class="bg-gray-100 border-teal-500 text-sm border border-teal-500 text-teal-500 py-1 px-4 mx-4 rounded"
           type="button"
-          @click="$emit('tapCloseModal')"
+          @click="$emit('tapCloseDeleteSetting')"
         >
           中止
         </button>
