@@ -6,7 +6,7 @@
     </div>
     <transition name="slide-fade">
       <Menu
-        v-if="isOpenedMenu"
+        v-if="isShownMenu"
         @tapCloseIcon="closeMenu"
         @tapDeleteSetting="openDeleteSettingModal"
         @tapUpdateTitle="openUpdateTitleModal"
@@ -42,7 +42,7 @@ export default {
 
   data() {
     return {
-      isOpenedMenu: false,
+      isShownMenu: false,
       isShownDeleteSetting: false,
       isShownUpdateTitle: false
     }
@@ -58,11 +58,11 @@ export default {
 
   methods: {
     openMenu() {
-      this.isOpenedMenu = true
+      this.isShownMenu = true
     },
 
     closeMenu() {
-      this.isOpenedMenu = false
+      this.isShownMenu = false
     },
 
     openDeleteSettingModal() {
