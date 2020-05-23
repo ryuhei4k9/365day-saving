@@ -13,7 +13,7 @@
       />
     </transition>
 
-    <DeleteModal
+    <DeleteSetting
       v-if="isShownDeleteSetting"
       @tapCloseDeleteSetting="closeDeleteSettingModal"
     />
@@ -28,15 +28,15 @@
 import AppHeader from '~/components/AppHeader.vue'
 import Grid from '~/components/Grid.vue'
 import Menu from '~/components/Menu.vue'
-import DeleteModal from '~/components/DeleteModal.vue'
-import UpdateTitle from '~/components/UpdateTitle.vue'
+import DeleteSetting from '~/components/modal/DeleteSetting.vue'
+import UpdateTitle from '~/components/modal/UpdateTitle.vue'
 
 export default {
   components: {
     AppHeader,
     Grid,
     Menu,
-    DeleteModal,
+    DeleteSetting,
     UpdateTitle
   },
 

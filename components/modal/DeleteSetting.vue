@@ -51,7 +51,7 @@ export default {
       this.$store.commit('settingState/resetSettings', {
         date: this.$dayjs().format('YYYY/MM/DD')
       })
-      this.$emit('tapCloseModal')
+      this.$emit('tapCloseDeleteSetting')
     }
   }
 }
