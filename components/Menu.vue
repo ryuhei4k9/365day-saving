@@ -18,9 +18,9 @@
           <FlagIcon />
           <span class="leading-6">目標（タイトル）設定</span>
         </li>
-        <li class="list-item" @click="resetStates">
+        <li class="list-item">
           <CalanderIcon />
-          <span class="leading-6">貯金開始日変更</span>
+          <span class="leading-6">貯金開始日変更（WIP）</span>
         </li>
         <li class="list-item" @click="$emit('tapDeleteSetting')">
           <TrashIcon />
@@ -95,25 +95,6 @@ export default {
 
     numberOfDoneCell() {
       return this.$store.getters['gridState/numberOfDoneCell']
-    }
-  },
-
-  methods: {
-    editTitle() {
-      this.isEditing = true
-    },
-
-    updateTitle() {
-      this.isEditing = false
-    },
-
-    resetStates() {
-      this.isModalShown = true
-      // this.$store.commit('gridState/resetCells')
-      // this.$store.commit('headerState/resetTotal')
-      // this.$store.commit('settingState/resetSettings', {
-      //   date: this.$dayjs().format('YYYY/MM/DD')
-      // })
     }
   }
 }
