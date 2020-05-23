@@ -14,9 +14,23 @@
         </div>
       </div>
       <ul class="mb-4">
-        <li class="list-item border-t">
+        <li v-if="!isEditing" class="list-item border-t" @click="editTitle">
           <FlagIcon />
           <span class="leading-6">目標（タイトル）設定</span>
+        </li>
+        <li v-if="isEditing" class="list-item border-t">
+          <input
+            class="appearance-none bg-transparent border-b border-b-2 border-teal-500 w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            type="text"
+            v-model="title"
+          />
+          <button
+            class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+            type="button"
+            @click="updateTitle"
+          >
+            変更
+          </button>
         </li>
         <li class="list-item" @click="resetStates">
           <CalanderIcon />
@@ -67,9 +81,22 @@ export default {
     TrashIcon
   },
 
+  data() {
+    return {
+      isEditing: false
+    }
+  },
+
   computed: {
-    title() {
-      return this.$store.state.settingState.title
+    title: {
+      get() {
+        return this.$store.state.settingState.title
+      },
+      set(value) {
+        this.$store.commit('settingState/updateTitle', {
+          afterTitle: value
+        })
+      }
     },
 
     total() {
@@ -86,6 +113,14 @@ export default {
   },
 
   methods: {
+    editTitle() {
+      this.isEditing = true
+    },
+
+    updateTitle() {
+      this.isEditing = false
+    },
+
     resetStates() {
       this.$store.commit('gridState/resetCells')
       this.$store.commit('headerState/resetTotal')
@@ -112,7 +147,7 @@ li > svg {
 }
 
 .list-item {
-  @apply flex items-center justify-start h-12 pl-4 bg-gray-100 border-b border-teal-800 text-teal-800 text-base;
+  @apply flex items-center justify-start h-12 pl-4 pr-2 bg-gray-100 border-b border-teal-800 text-teal-800 text-base;
 }
 
 .list-item2 {
