@@ -54,7 +54,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 svg {
   fill: currentColor;
   width: 2rem;

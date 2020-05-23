@@ -111,10 +111,4 @@ export default {
   transform: translateX(40px);
   opacity: 0;
 }
-
-svg {
-  fill: currentColor;
-  width: 2rem;
-  height: 2rem;
-}
 </style>
