@@ -5,8 +5,14 @@
       <Grid />
     </div>
     <transition name="slide-fade">
-      <Menu v-if="isOpenedMenu" @tapCloseIcon="closeMenu" />
+      <Menu
+        v-if="isOpenedMenu"
+        @tapCloseIcon="closeMenu"
+        @tapDeleteMenu="openModal"
+      />
     </transition>
+
+    <DeleteModal v-if="isModalShown" @tapCloseModal="closeModal" />
   </div>
 </template>
 
@@ -14,17 +20,20 @@
 import AppHeader from '~/components/AppHeader.vue'
 import Grid from '~/components/Grid.vue'
 import Menu from '~/components/Menu.vue'
+import DeleteModal from '~/components/DeleteModal.vue'
 
 export default {
   components: {
     AppHeader,
     Grid,
-    Menu
+    Menu,
+    DeleteModal
   },
 
   data() {
     return {
-      isOpenedMenu: false
+      isOpenedMenu: false,
+      isModalShown: false
     }
   },
 
@@ -43,6 +52,14 @@ export default {
 
     closeMenu() {
       this.isOpenedMenu = false
+    },
+
+    openModal() {
+      this.isModalShown = true
+    },
+
+    closeModal() {
+      this.isModalShown = false
     }
   }
 }
@@ -74,5 +91,11 @@ export default {
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(40px);
   opacity: 0;
+}
+
+svg {
+  fill: currentColor;
+  width: 2rem;
+  height: 2rem;
 }
 </style>

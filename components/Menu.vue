@@ -36,7 +36,7 @@
           <CalanderIcon />
           <span class="leading-6">貯金開始日変更</span>
         </li>
-        <li class="list-item" @click="resetStates">
+        <li class="list-item" @click="$emit('tapDeleteMenu')">
           <TrashIcon />
           <span class="leading-6">データ削除</span>
         </li>
@@ -122,11 +122,12 @@ export default {
     },
 
     resetStates() {
-      this.$store.commit('gridState/resetCells')
-      this.$store.commit('headerState/resetTotal')
-      this.$store.commit('settingState/resetSettings', {
-        date: this.$dayjs().format('YYYY/MM/DD')
-      })
+      this.isModalShown = true
+      // this.$store.commit('gridState/resetCells')
+      // this.$store.commit('headerState/resetTotal')
+      // this.$store.commit('settingState/resetSettings', {
+      //   date: this.$dayjs().format('YYYY/MM/DD')
+      // })
     }
   }
 }
