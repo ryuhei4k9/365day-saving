@@ -59,7 +59,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.$store.commit('settingState/initialize', {
-        date: this.$dayjs().format('YYYY/MM/DD')
+        date: this.$dayjs().format('YYYY-MM-DD')
       })
     }, 0)
   },

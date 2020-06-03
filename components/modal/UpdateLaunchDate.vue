@@ -48,7 +48,7 @@ export default {
       },
       set(value) {
         this.$store.commit('settingState/updateLaunchDate', {
-          afterDate: this.$dayjs(value).format('YYYY/MM/DD')
+          afterDate: this.$dayjs(value).format('YYYY-MM-DD')
         })
       }
     }

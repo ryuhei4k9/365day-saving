@@ -78,10 +78,6 @@ export default {
   },
 
   computed: {
-    title() {
-      return this.$store.state.settingState.title
-    },
-
     total() {
       return this.$store.state.headerState.total
     },
