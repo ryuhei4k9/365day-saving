@@ -50,7 +50,7 @@
         </li>
         <li class="list-item2">
           <div class="leading-6">経過日数</div>
-          <div class="leading-6">{{ passedDays }}</div>
+          <div class="leading-6">{{ passedDays }}日</div>
         </li>
       </ul>
     </nav>
