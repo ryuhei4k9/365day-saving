@@ -10,6 +10,7 @@
         @tapCloseIcon="closeMenu"
         @tapDeleteSetting="openDeleteSettingModal"
         @tapUpdateTitle="openUpdateTitleModal"
+        @tapUpdateLaunchDate="openUpdateLaunchDateModal"
       />
     </transition>
 
@@ -21,6 +22,10 @@
       v-if="isShownUpdateTitle"
       @tapCloseUpdateTitle="closeUpdateTitleModal"
     />
+    <UpdateLaunchDate
+      v-if="isShownUpdateLaunchDate"
+      @tapCloseUpdateLaunchDate="closeUpdateLaunchDateModal"
+    />
   </div>
 </template>
 
@@ -30,6 +35,7 @@ import Grid from '~/components/Grid.vue'
 import Menu from '~/components/Menu.vue'
 import DeleteSetting from '~/components/modal/DeleteSetting.vue'
 import UpdateTitle from '~/components/modal/UpdateTitle.vue'
+import UpdateLaunchDate from '~/components/modal/UpdateLaunchDate.vue'
 
 export default {
   components: {
@@ -37,21 +43,23 @@ export default {
     Grid,
     Menu,
     DeleteSetting,
-    UpdateTitle
+    UpdateTitle,
+    UpdateLaunchDate
   },
 
   data() {
     return {
       isShownMenu: false,
       isShownDeleteSetting: false,
-      isShownUpdateTitle: false
+      isShownUpdateTitle: false,
+      isShownUpdateLaunchDate: false
     }
   },
 
   mounted() {
     setTimeout(() => {
       this.$store.commit('settingState/initialize', {
-        date: this.$dayjs().format('YYYY/MM/DD')
+        date: this.$dayjs().format('YYYY-MM-DD')
       })
     }, 0)
   },
@@ -79,6 +87,14 @@ export default {
 
     closeUpdateTitleModal() {
       this.isShownUpdateTitle = false
+    },
+
+    openUpdateLaunchDateModal() {
+      this.isShownUpdateLaunchDate = true
+    },
+
+    closeUpdateLaunchDateModal() {
+      this.isShownUpdateLaunchDate = false
     }
   }
 }

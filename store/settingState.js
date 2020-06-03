@@ -14,6 +14,10 @@ export const mutations = {
     state.title = afterTitle
   },
 
+  updateLaunchDate(state, { afterDate }) {
+    state.launchDate = afterDate
+  },
+
   resetSettings(state, { date }) {
     state.title = '365日貯金'
     state.launchDate = date

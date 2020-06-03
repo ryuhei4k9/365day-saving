@@ -18,9 +18,9 @@
           <FlagIcon />
           <span class="leading-6">目標（タイトル）設定</span>
         </li>
-        <li class="list-item">
+        <li class="list-item" @click="$emit('tapUpdateLaunchDate')">
           <CalanderIcon />
-          <span class="leading-6">貯金開始日変更（WIP）</span>
+          <span class="leading-6">貯金開始日変更</span>
         </li>
         <li class="list-item" @click="$emit('tapDeleteSetting')">
           <TrashIcon />
@@ -48,6 +48,10 @@
           <div class="leading-6">貯金開始日</div>
           <div class="leading-6">{{ date }}</div>
         </li>
+        <li class="list-item2">
+          <div class="leading-6">経過日数</div>
+          <div class="leading-6">{{ passedDays }}日</div>
+        </li>
       </ul>
     </nav>
   </div>
@@ -74,23 +78,21 @@ export default {
   },
 
   computed: {
-    title: {
-      get() {
-        return this.$store.state.settingState.title
-      },
-      set(value) {
-        this.$store.commit('settingState/updateTitle', {
-          afterTitle: value
-        })
-      }
-    },
-
     total() {
       return this.$store.state.headerState.total
     },
 
     date() {
-      return this.$store.state.settingState.launchDate
+      return this.$dayjs(this.$store.state.settingState.launchDate).format(
+        'YYYY年MM月DD日'
+      )
+    },
+
+    passedDays() {
+      return this.$dayjs().diff(
+        this.$store.state.settingState.launchDate,
+        'day'
+      )
     },
 
     numberOfDoneCell() {
