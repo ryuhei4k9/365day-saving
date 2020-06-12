@@ -1,22 +1,15 @@
 # 365day-saving
+![img](./static/icon.png?raw=true)
+これはアプリ「365日貯金」の開発リポジトリです。
 
-> My mind-blowing Nuxt.js project
-
-## Build Setup
-
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
+## development
+```
+$ yarn
 $ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## author
+[@ryuhei4k9](https://twitter.com/TanakanoAnchan)
+
+## licence
+MIT
