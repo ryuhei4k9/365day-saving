@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: '365日貯金',
     meta: [
       { charset: 'utf-8' },
       {
@@ -53,5 +53,12 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+
+  pwa: {
+    manifest: {
+      name: '365日貯金',
+      lang: 'ja'
+    }
   }
 }

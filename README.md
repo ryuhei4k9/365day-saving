@@ -1,22 +1,22 @@
 # 365day-saving
+![img](./static/icon.png?raw=true)
+これはアプリ「365日貯金」の開発リポジトリです。
 
-> My mind-blowing Nuxt.js project
+## install
+※ 現在iPhoneでのみ動作を確認しています
 
-## Build Setup
+1. safariで https://365save.ryuhei.dev/ を開く
+2. 画面下部ツールバー中央のアクションボタンから「ホーム画面に追加」を選択
+3. 他のアプリと同じように利用できる
 
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
+## development
+```
+$ yarn
 $ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## author
+[@ryuhei4k9](https://twitter.com/373_3)
+
+## licence
+MIT

@@ -1,7 +1,7 @@
 {
   "name": "365day-saving",
   "version": "1.0.0",
-  "description": "My mind-blowing Nuxt.js project",
+  "description": "progress management application for 365 days of savings.",
   "author": "ryuhei4k9",
   "private": true,
   "scripts": {
