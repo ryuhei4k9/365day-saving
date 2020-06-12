@@ -1,5 +1,6 @@
 # 365day-saving
 ![img](./static/icon.png?raw=true)
+
 これはアプリ「365日貯金」の開発リポジトリです。
 
 ## install
