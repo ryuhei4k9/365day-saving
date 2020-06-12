@@ -19,7 +19,6 @@
     "tailwindcss-aspect-ratio": "^3.0.0",
     "tailwindcss-filters": "^3.0.0",
     "tailwindcss-padding-safe": "^1.0.5",
-    "vue-tailwind-picker": "^1.1.2",
     "vuex-persistedstate": "^3.0.1"
   },
   "devDependencies": {
